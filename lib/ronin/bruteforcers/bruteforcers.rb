@@ -19,9 +19,10 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'ronin/database/migrations/bruteforcers'
+require 'ronin/auto_load'
 
-require 'ronin/bruteforcers/bruteforcers'
-require 'ronin/config'
-
-Ronin::Config.load :bruteforcers
+module Ronin
+  module Bruteforcers
+    include AutoLoad
+  end
+end

@@ -1,7 +1,8 @@
 #
-# Copyright (c) 2012 Hal Brodigan (postmodern.mod3 at gmail.com)
+# Ronin Bruteforcers - A Ruby library for Ronin that provides various
+# bruteforcers.
 #
-# This file is part of Ronin Bruteforcers.
+# Copyright (c) 2011-2012 Hal Brodigan (postmodern.mod3 at gmail.com)
 #
 # Ronin Bruteforcers is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

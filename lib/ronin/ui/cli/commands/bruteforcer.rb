@@ -19,9 +19,25 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'ronin/database/migrations/bruteforcers'
+require 'ronin/ui/cli/script_command'
+require 'ronin/bruteforcers/bruteforcer'
 
-require 'ronin/bruteforcers/bruteforcers'
-require 'ronin/config'
+module Ronin
+  module UI
+    module CLI
+      module Commands
+        class Bruteforcer < ScriptCommand
 
-Ronin::Config.load :bruteforcers
+          summary 'Loads and runs a bruteforcer'
+
+          script_class Ronin::Bruteforcers::Bruteforcer
+
+          # scanner options
+          option :first, :type => true, :flag => '-N'
+          option :import, :type => true, :flag => '-I'
+
+        end
+      end
+    end
+  end
+end

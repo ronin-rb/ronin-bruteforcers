@@ -19,9 +19,32 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'ronin/database/migrations/bruteforcers'
+require 'ronin/ui/cli/bruteforcer_command'
+require 'ronin/bruteforcers/telnet'
 
-require 'ronin/bruteforcers/bruteforcers'
-require 'ronin/config'
+module Ronin
+  module UI
+    module CLI
+      module Commands
+        module Brute
+          class Telnet < BruteforcerCommand
 
-Ronin::Config.load :bruteforcers
+            summary 'Performs Telnet bruteforcing against a host'
+
+            #
+            # Runs the {Ronin::Bruteforcers::Telnet} scanner.
+            #
+            def execute
+              print_info 'Saving captured Telnet credentials ...' if import?
+
+              brute
+
+              print_info 'All valid Telnet credentials saved.' if import?
+            end
+
+          end
+        end
+      end
+    end
+  end
+end

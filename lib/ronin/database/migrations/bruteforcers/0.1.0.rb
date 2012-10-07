@@ -19,9 +19,31 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'ronin/database/migrations/bruteforcers'
+module Ronin
+  module Database
+    module Migrations
+      migration(
+        :create_bruteforcers_table,
+        :needs => [:create_licenses_table, :create_script_paths_table]
+      ) do
+        up do
+          create_table :ronin_bruteforcers_bruteforcers do
+            column :id, Integer, :serial => true
+            column :type, String, :not_null => true
+            column :name, String, :not_null => true
+            column :version, String, :default => '0.1'
+            column :description, Text
+            column :license_id, Integer
+            column :script_path_id, Integer
+          end
 
-require 'ronin/bruteforcers/bruteforcers'
-require 'ronin/config'
+          create_index :ronin_bruteforcers_bruteforcers, :name
+        end
 
-Ronin::Config.load :bruteforcers
+        down do
+          drop_table :ronin_bruteforcers_bruteforcers
+        end
+      end
+    end
+  end
+end

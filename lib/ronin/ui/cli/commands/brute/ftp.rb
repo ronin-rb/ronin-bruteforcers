@@ -19,9 +19,32 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'ronin/database/migrations/bruteforcers'
+require 'ronin/ui/cli/bruteforcer_command'
+require 'ronin/bruteforcers/ftp'
 
-require 'ronin/bruteforcers/bruteforcers'
-require 'ronin/config'
+module Ronin
+  module UI
+    module CLI
+      module Commands
+        module Brute
+          class FTP < BruteforcerCommand
 
-Ronin::Config.load :bruteforcers
+            summary 'Performs FTP bruteforcing against a host'
+
+            #
+            # Runs the {Ronin::Bruteforcers::FTP} scanner.
+            #
+            def execute
+              print_info 'Saving captured FTP credentials ...' if import?
+
+              brute
+
+              print_info 'All valid FTP credentials saved.' if import?
+            end
+
+          end
+        end
+      end
+    end
+  end
+end

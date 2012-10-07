@@ -1,17 +1,29 @@
 # Ronin Bruteforcers
 
-* [Source](http://github.com/ronin-ruby/ronin-bruteforcers)
-* [Issues](http://github.com/ronin-ruby/ronin-bruteforcers/issues)
+* [Source](https://github.com/ronin-ruby/ronin-bruteforcers)
+* [Issues](https://github.com/ronin-ruby/ronin-bruteforcers/issues)
 * [Documentation](http://rubydoc.info/gems/ronin-bruteforcers/frames)
 * [Email](mailto:postmodern.mod3 at gmail.com)
 
 ## Description
 
-Ronin Bruteforcers is a Ronin library.
+Ronin Bruteforcers is a Ruby library for Ronin that provides various
+bruteforcers.
 
 ## Features
 
+* Provides various Bruteforcers:
+  * {Ronin::Bruteforcers::DB}
+  * {Ronin::Bruteforcers::FTP}
+  * {Ronin::Bruteforcers::IMAP}
+  * {Ronin::Bruteforcers::POP3}
+  * {Ronin::Bruteforcers::SMTP}
+  * {Ronin::Bruteforcers::SSH}
+  * {Ronin::Bruteforcers::Telnet}
+
 ## Synopsis
+
+Start the Ronin console with Ronin Bruteforcers preloaded:
 
     $ ronin bruteforcers
 
@@ -19,17 +31,25 @@ Ronin Bruteforcers is a Ronin library.
 
 ## Requirements
 
-* [ronin](http://github.com/ronin-ruby/ronin#readme) ~> 1.0
+* [ronin-support] ~> 0.5
+* [ronin] ~> 1.0
 
 ## Install
 
+### Stable
+
     $ gem install ronin-bruteforcers
+
+### Edge
+
+    $ git clone git://github.com/ronin-ruby/ronin-bruteforcers.git
+    $ cd ronin-bruteforcers/
+    $ bundle install
+    $ ./bin/ronin-brute-ssh --help
 
 ## License
 
-Copyright (c) 2012 Hal Brodigan (postmodern.mod3 at gmail.com)
-
-This file is part of Ronin Bruteforcers.
+Copyright (c) 2011-2012 Hal Brodigan (postmodern.mod3 at gmail.com)
 
 Ronin Bruteforcers is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -43,3 +63,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Ronin Bruteforcers.  If not, see <http://www.gnu.org/licenses/>.
+
+[ronin-support]: https://github.com/ronin-ruby/ronin-support#readme
+[ronin]: https://github.com/ronin-ruby/ronin#readme

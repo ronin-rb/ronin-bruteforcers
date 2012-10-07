@@ -19,9 +19,34 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-require 'ronin/database/migrations/bruteforcers'
+require 'ronin/ui/cli/bruteforcer_command'
+require 'ronin/bruteforcers/ssh'
 
-require 'ronin/bruteforcers/bruteforcers'
-require 'ronin/config'
+module Ronin
+  module UI
+    module CLI
+      module Commands
+        module Brute
+          class SSH < BruteforcerCommand
 
-Ronin::Config.load :bruteforcers
+            summary 'Performs SSH bruteforcing against a host'
+
+            #
+            # Runs the {Ronin::Bruteforcers::SSH} scanner.
+            #
+            # @since 1.0.0
+            #
+            def execute
+              print_info 'Saving captured SSH credentials ...' if import?
+
+              brute
+
+              print_info 'All valid SSH credentials saved.' if import?
+            end
+
+          end
+        end
+      end
+    end
+  end
+end

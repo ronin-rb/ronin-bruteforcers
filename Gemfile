@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 DM_URI     = 'http://github.com/datamapper'
 DM_VERSION = '~> 1.2'
+DO_VERSION = '~> 0.10.3'
 RONIN_URI  = 'http://github.com/ronin-ruby'
 
 gemspec
@@ -18,7 +19,15 @@ group :development do
 
   gem 'rubygems-tasks', '~> 0.1'
   gem 'rspec',          '~> 2.4'
+
+  gem 'dm-visualizer',		'~> 0.2.0'
 end
+
+group :test do
+  gem 'do_mysql',    DO_VERSION
+  gem 'do_postgres', DO_VERSION
+end
+
 
 #
 # To enable additional DataMapper adapters for development work or for

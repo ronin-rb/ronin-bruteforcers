@@ -1,0 +1,16 @@
+name: ronin-bruteforcers
+summary: A Ronin library.
+description: ronin-bruteforcers is a library for Ronin.
+
+license: GPL-3
+authors: Hal Brodigan
+email: postmodern.mod3@gmail.com
+homepage: http://ronin-ruby.github.com/
+has_yard: true
+
+dependencies:
+  ronin: ~> 1.0
+
+development_dependencies:
+  bundler: ~> 1.0
+  yard: ~> 0.8

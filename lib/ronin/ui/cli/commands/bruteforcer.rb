@@ -36,6 +36,30 @@ module Ronin
           option :first, :type => true, :flag => '-N'
           option :import, :type => true, :flag => '-I'
 
+          def execute
+            if @import
+              bruteforce_method = if @first then :import_credential
+                                  else           :import_credentials
+                                  end
+
+              formatter = lambda { |credential| credential.to_ary.join("\t") }
+            else
+              bruteforce_method = if @first then :bruteforce
+                                  else           :bruteforce_all
+                                  end
+
+              formatter = lambda { |*credentials| credentials.join("\t") }
+            end
+
+            print_info "Bruteforcing ..."
+
+            @script.send(bruteforce_method) do |*credentials|
+              print_info "Found: #{formatter[*credentials]}"
+            end
+
+            print_info "Bruteforce complete."
+          end
+
         end
       end
     end

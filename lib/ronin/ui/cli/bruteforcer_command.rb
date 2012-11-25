@@ -70,20 +70,16 @@ module Ronin
 
         def brute
           if import?
-            method = if all?
-                       :import_credentials
-                     else
-                       :import_credential
+            method = if all? then :import_credentials
+                     else         :import_credential
                      end
 
             printer = lambda { |credential|
               print_info "Found: #{credential.to_ary.join("\t")}"
             }
           else
-            method = if all?
-                       :bruteforce_all
-                     else
-                       :bruteforce
+            method = if all? then :bruteforce_all
+                     else         :bruteforce
                      end
 
             printer = lambda { |*credentials|

@@ -38,9 +38,7 @@ module Ronin
 
           def execute
             if @console
-              print_info "Starting the console with @bruteforcer set ..."
-
-              UI::Console.start(:bruteforcer => @script)
+              UI::Console.start(@script)
             else
               if @import
                 bruteforce_method = if @first then :import_credential

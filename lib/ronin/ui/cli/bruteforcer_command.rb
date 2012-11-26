@@ -38,7 +38,7 @@ module Ronin
                         :flag => '-I',
                         :description => 'Save the credentials to the Database'
 
-        alias bruteforcer object
+        alias bruteforcer instance
 
         protected
 

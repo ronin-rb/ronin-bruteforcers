@@ -31,6 +31,7 @@ Start the Ronin console with Ronin Bruteforcers preloaded:
 
 ## Requirements
 
+* [Ruby] >= 1.9.1
 * [ronin-support] ~> 0.5
 * [ronin] ~> 1.0
 
@@ -63,6 +64,8 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with Ronin Bruteforcers.  If not, see <http://www.gnu.org/licenses/>.
+
+[Ruby]: http://www.ruby-lang.org
 
 [ronin-support]: https://github.com/ronin-ruby/ronin-support#readme
 [ronin]: https://github.com/ronin-ruby/ronin#readme

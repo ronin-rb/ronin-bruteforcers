@@ -32,8 +32,8 @@ module Ronin
     class FTP < ServiceBruteforcer
 
       # The port FTP is listening on
-      parameter :port, :default => 21,
-                       :description => 'The port that FTP is listening on'
+      parameter :port, default: 21,
+                       description: 'The port that FTP is listening on'
 
       protected
 

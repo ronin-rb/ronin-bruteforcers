@@ -39,44 +39,44 @@ module Ronin
       property :id, Serial
 
       # Primary username to use
-      parameter :username, :type        => String,
-                           :description => 'Primary username to bruteforce'
+      parameter :username, type:        String,
+                           description: 'Primary username to bruteforce'
 
       # Additional user-names to try
-      parameter :usernames, :type        => Array[String],
-                            :default     => [],
-                            :description => 'Additional usernames to bruteforce'
+      parameter :usernames, type:        Array[String],
+                            default:     [],
+                            description: 'Additional usernames to bruteforce'
 
       # Paths to the wordlist file or list of words.
-      parameter :wordlist, :description => 'Wordlist file or list of words'
+      parameter :wordlist, description: 'Wordlist file or list of words'
 
       # Mutation rules to apply to words from the {#wordlist}
-      parameter :mutations, :default     => {},
-                            :description => 'Hash of mutations to perform'
+      parameter :mutations, default:     {},
+                            description: 'Hash of mutations to perform'
 
       # Word generator template
-      parameter :word_template, :type        => Array,
-                                :description => 'String generator template'
+      parameter :word_template, type:        Array,
+                                description: 'String generator template'
 
       # Minimum number of words to combine
-      parameter :min_words, :type        => Integer,
-                            :default     => 1,
-                            :description => 'Minimum number of words to use'
+      parameter :min_words, type:        Integer,
+                            default:     1,
+                            description: 'Minimum number of words to use'
 
       # Maximum number of words to combine
-      parameter :max_words, :type        => Integer,
-                            :default     => 1,
-                            :description => 'Maximum number of words to use'
+      parameter :max_words, type:        Integer,
+                            default:     1,
+                            description: 'Maximum number of words to use'
 
       # The number of threads to run
-      parameter :threads, :type        => Integer,
-                          :default     => 0,
-                          :description => 'Number of separate threads'
+      parameter :threads, type:        Integer,
+                          default:     0,
+                          description: 'Number of separate threads'
 
       # Maximum number of times to reconnect
-      parameter :max_retries, :type    => Integer,
-                              :default => 4,
-                              :description => 'Number of connection retries'
+      parameter :max_retries, type:    Integer,
+                              default: 4,
+                              description: 'Number of connection retries'
 
       #
       # Creates a new {Bruteforcer} object.
@@ -283,8 +283,8 @@ module Ronin
       #
       def new_credential(username,password)
         Credential.first_or_new(
-          :user_name     => UserName.parse(username),
-          :password      => Password.parse(password)
+          user_name:     UserName.parse(username),
+          password:      Password.parse(password)
         )
       end
 

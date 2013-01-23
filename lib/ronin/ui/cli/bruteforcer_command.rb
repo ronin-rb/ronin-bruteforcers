@@ -26,17 +26,17 @@ module Ronin
 
         class_namespace Bruteforcers
 
-        option :database, :type => String,
-                          :flag => '-D',
-                          :description => 'Ronin Database URI'
+        option :database, type: String,
+                          flag: '-D',
+                          description: 'Ronin Database URI'
 
-        option :all, :type => true,
-                     :flag => '-N',
-                     :description => 'Bruteforce all usernames'
+        option :all, type: true,
+                     flag: '-N',
+                     description: 'Bruteforce all usernames'
 
-        option :import, :type => true,
-                        :flag => '-I',
-                        :description => 'Save the credentials to the Database'
+        option :import, type: true,
+                        flag: '-I',
+                        description: 'Save the credentials to the Database'
 
         alias bruteforcer instance
 

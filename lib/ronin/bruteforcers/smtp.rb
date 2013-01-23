@@ -32,17 +32,17 @@ module Ronin
     class SMTP < ServiceBruteforcer
 
       # The port SMTP is listening on
-      parameter :port, :default => 25,
-                       :description => 'The port that SMTP is listening on'
+      parameter :port, default: 25,
+                       description: 'The port that SMTP is listening on'
 
       # Enables SSL for the SMTP connections
-      parameter :ssl, :default     => false,
-                      :description => 'Specifies whether to enable SSL'
+      parameter :ssl, default:     false,
+                      description: 'Specifies whether to enable SSL'
 
       # The HELO String to send to the SMTP Service
-      parameter :helo, :type        => String,
-                       :default     => 'localhost',
-                       :description => 'HELO String to send'
+      parameter :helo, type:        String,
+                       default:     'localhost',
+                       description: 'HELO String to send'
 
       protected
 

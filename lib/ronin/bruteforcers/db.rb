@@ -27,12 +27,12 @@ module Ronin
   module Bruteforcers
     class DB < ServiceBruteforcer
 
-      parameter :type, :type        => String,
-                       :description => 'The type of database'
+      parameter :type, type:        String,
+                       description: 'The type of database'
 
-      parameter :db, :type        => String,
-                     :default     => 'information_schema',
-                     :description => 'The database to try loggin into'
+      parameter :db, type:        String,
+                     default:     'information_schema',
+                     description: 'The database to try loggin into'
 
       protected
 
@@ -40,10 +40,10 @@ module Ronin
         require "do_#{self.type}"
 
         return Addressable::URI.new(
-          :scheme => self.type,
-          :host   => self.host,
-          :port   => self.port,
-          :path   => self.db
+          scheme: self.type,
+          host:   self.host,
+          port:   self.port,
+          path:   self.db
         )
       end
 

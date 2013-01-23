@@ -32,8 +32,8 @@ module Ronin
     class Telnet < ServiceBruteforcer
 
       # The port Telnet is listening on
-      parameter :port, :default => 23,
-                       :description => 'The port that Telnet is listening on'
+      parameter :port, default: 23,
+                       description: 'The port that Telnet is listening on'
 
       protected
 

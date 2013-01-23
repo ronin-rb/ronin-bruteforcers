@@ -32,12 +32,12 @@ module Ronin
     class IMAP < ServiceBruteforcer
 
       # The port SMTP is listening on
-      parameter :port, :default => 110,
-                       :description => 'The port that IMAP is listening on'
+      parameter :port, default: 110,
+                       description: 'The port that IMAP is listening on'
 
       # Enables SSL for the IMAP connections
-      parameter :ssl, :default     => false,
-                      :description => 'Specifies whether to enable SSL'
+      parameter :ssl, default:     false,
+                      description: 'Specifies whether to enable SSL'
 
       protected
 
@@ -48,7 +48,7 @@ module Ronin
       #   The Net::IMAP session.
       #
       def open_session
-        Net::IMAP.new(self.host, :port => self.port, :ssl => self.ssl)
+        Net::IMAP.new(self.host, port: self.port, ssl: self.ssl)
       end
 
       #

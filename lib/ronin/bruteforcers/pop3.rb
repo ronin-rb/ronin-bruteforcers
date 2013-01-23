@@ -32,12 +32,12 @@ module Ronin
     class POP3 < ServiceBruteforcer
 
       # The port SMTP is listening on
-      parameter :port, :default => 110,
-                       :description => 'The port that POP3 is listening on'
+      parameter :port, default: 110,
+                       description: 'The port that POP3 is listening on'
 
       # Enables SSL for the POP3 connections
-      parameter :ssl, :default     => false,
-                      :description => 'Specifies whether to enable SSL'
+      parameter :ssl, default:     false,
+                      description: 'Specifies whether to enable SSL'
 
       protected
 

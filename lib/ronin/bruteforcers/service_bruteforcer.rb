@@ -27,12 +27,12 @@ module Ronin
     class ServiceBruteforcer < Bruteforcer
 
       # The host that will be bruteforced
-      parameter :host, :type        => String,
-                       :description => 'Host that the Service is running on'
+      parameter :host, type:        String,
+                       description: 'Host that the Service is running on'
 
       # The port that will be bruteforced
-      parameter :port, :type        => Integer,
-                       :description => 'Port that the Service is running on'
+      parameter :port, type:        Integer,
+                       description: 'Port that the Service is running on'
 
       protected
 
@@ -52,12 +52,12 @@ module Ronin
       #
       def new_credential(username,password)
         ServiceCredential.first_or_new(
-          :user_name => UserName.parse(username),
-          :password  => Password.parse(password),
+          user_name: UserName.parse(username),
+          password:  Password.parse(password),
 
-          :open_port => OpenPort.first_or_new(
-            :ip_address => IPAddress.lookup(self.host).first,
-            :port       => Port.from(self.port)
+          open_port: OpenPort.first_or_new(
+            ip_address: IPAddress.lookup(self.host).first,
+            port:       Port.from(self.port)
           )
         )
       end

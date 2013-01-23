@@ -33,8 +33,8 @@ module Ronin
           script_class Ronin::Bruteforcers::Bruteforcer
 
           # scanner options
-          option :first, :type => true, :flag => '-N'
-          option :import, :type => true, :flag => '-I'
+          option :first, type: true, flag: '-N'
+          option :import, type: true, flag: '-I'
 
           def execute
             if console?

@@ -32,8 +32,8 @@ module Ronin
     class SSH < ServiceBruteforcer
 
       # The port SSH is listening on
-      parameter :port, :default => 22,
-                       :description => 'The port that SSH is listening on'
+      parameter :port, default: 22,
+                       description: 'The port that SSH is listening on'
 
       protected
 
@@ -44,7 +44,7 @@ module Ronin
       #   The option Hash for Net::SSH.
       #
       def open_session
-        {:port => self.port, :auth_methods => ['password']}
+        {port: self.port, auth_methods: ['password']}
       end
 
       #

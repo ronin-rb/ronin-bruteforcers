@@ -10,6 +10,8 @@ email: postmodern.mod3@gmail.com
 homepage: https://github.com/ronin-ruby/ronin-bruteforcers#readme
 has_yard: true
 
+required_ruby_version: ">= 1.9.1"
+
 dependencies:
   # Ronin::Bruteforcers::SSH dependencies
   net-ssh: ~> 2.1

@@ -5,6 +5,8 @@
 * [Documentation](http://rubydoc.info/gems/ronin-bruteforcers/frames)
 * [Email](mailto:postmodern.mod3 at gmail.com)
 
+[![Build Status](https://secure.travis-ci.org/ronin-ruby/ronin-bruteforcers.png?branch=master)](https://travis-ci.org/ronin-ruby/ronin-bruteforcers)
+
 ## Description
 
 Ronin Bruteforcers is a Ruby library for Ronin that provides various
